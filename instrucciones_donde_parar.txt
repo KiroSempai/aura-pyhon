@@ -1,0 +1,13 @@
+Los puntos de parada real — donde dejas a AURA sola — son exactamente estos:
+Parada 1 — Después de Fase 0
+Dejas la conexión funcionando y simplemente observas. AURA no hace nada útil aún, pero verificas que el canal TCP/IP es estable, que los frames llegan sin pérdida, que el ciclo corre limpio. Esta parada es tuya, no de AURA.
+Parada 2 — Después de Fase 1 (la más importante)
+Aquí sí dejas a AURA sola durante tiempo real. Las cuatro pulsiones están activas y la red neuronal empieza a ajustar sus pesos. AURA necesita miles de ciclos para aprender que el dolor viene de ciertas zonas, que la energía se agota, que moverse hacia lo nuevo da recompensa. Este proceso no puedes acelerarlo. Deja correr sesiones de 2 a 8 horas y solo monitorea el mapa emocional desde fuera. No intervengas. Si intervienes, contaminas el aprendizaje con una variable que AURA aún no sabe procesar: tú.
+Parada 3 — Después de Fase 2
+El mapa espacial afectivo necesita llenarse. AURA tiene que haber recorrido el entorno suficientes veces como para que cada zona tenga una carga emocional acumulada real. Esto lleva tiempo de exploración autónoma. El criterio no es un número de horas: es cuando el mapa de calor emocional del entorno empieza a mostrar zonas claramente diferenciadas. Cuando veas eso, AURA ya tiene memoria real.
+Parada 4 — Justo antes de Fase 4A y 4B
+Antes de activar el lenguaje, necesitas que AURA haya acumulado un dataset significativo de interacciones contigo vía consola. Ese dataset es el material con el que el SLM va a aprender. Si lo activas con pocas interacciones registradas, no tiene nada que imitar. La calidad de su lenguaje emergente depende directamente de cuántas horas hayas pasado respondiendo sus balbuceos en consola.
+
+La regla general:
+Cada fase tiene un componente que tú construyes y un componente que AURA construye sola. Tu trabajo es encender el motor y quitarte del camino. La tentación de seguir añadiendo cosas mientras AURA todavía está aprendiendo la fase anterior es el error más común en proyectos de embodied AI, y el más dañino.
+Si en algún momento no ves cambio de comportamiento después de muchas horas de entrenamiento, el problema es casi siempre uno de dos: la función de reward no está bien balanceada, o la red neuronal es demasiado pequeña para generalizar. Ninguno de los dos se resuelve añadiendo más módulos.

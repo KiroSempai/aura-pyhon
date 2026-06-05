@@ -1,0 +1,122 @@
+╔══════════════════════════════════════════════════════════════╗
+║           PALETA EMOCIONAL DE AURA - GUIA DE REFERENCIA     ║
+╚══════════════════════════════════════════════════════════════╝
+
+El espacio emocional es un circulo bidimensional donde:
+  - Eje X -> VALENCIA  (-1 displacentero  <- -> +1 placentero)
+  - Eje Y -> AROUSAL   (-1 calmado        v ^ +1 excitado)
+
+Cada punto tiene un COLOR (HSL) y una ETIQUETA.
+
+Fuente: Modelo Circunflejo del Afecto (Russell, 1980)
+adaptado para AURA.
+
+═══════════════════════════════════════════════════════════════
+ REGIONES PRINCIPALES (8)
+═══════════════════════════════════════════════════════════════
+
+  Arousal+  |
+  Valencia- |  ESTRES                     |  ENTUSIASMO
+  ----------|-----------------------------|-------------------
+            |  Rojo-naranja (#FF4500)     |  Amarillo-dorado
+            |  (hue ~15-30)              |  (#FFD700, hue ~50)
+            |                             |
+            |  frustracion, ansiedad,     |  alegria intensa,
+            |  panico, tension             |  emocion, euforia,
+            |                             |  excitacion positiva
+            |                             |
+  Arousal+  |-----------------------------|-------------------
+  Arousal-  |                             |
+  Valencia- |  TRISTEZA                  |  CALMA
+            |  Azul-violaceo (#4B0082)    |  Verde-azulado
+            |  (hue ~250-270)            |  (#20B2AA, hue ~170)
+            |                             |
+            |  melancolia, apatia,        |  serenidad, paz,
+            |  depresion, desesperanza     |  tranquilidad,
+            |                             |  relajacion
+            |                             |
+  Arousal-  |-----------------------------|-------------------
+  Valencia-           |   Valencia+
+
+═══════════════════════════════════════════════════════════════
+ REGIONES DE TRANSICION (4 - colores mixtos)
+═══════════════════════════════════════════════════════════════
+
+  ALERTA         (Arousal+, Valencia neutra)   -> Naranja (#FF8C00)
+  SOSIEGO        (Arousal-, Valencia neutra)   -> Azul-grisaceo (#6A7B8B)
+  BIENESTAR      (Arousal neutra, Valencia+)   -> Verde esmeralda (#50C878)
+  DISPLACENTERO  (Arousal neutra, Valencia-)   -> Rojo-apagado (#8B3A3A)
+
+═══════════════════════════════════════════════════════════════
+ EMOCIONES MIXTAS (combinaciones)
+═══════════════════════════════════════════════════════════════
+
+  CURIOSIDAD + MIEDO = Naranja-rojizo (alerta cautelosa)
+  (arousal alto, valencia ligeramente negativa)
+
+  CALMA + MELANCOLIA = Azul-gris verdoso (nostalgia)
+  (arousal bajo, valencia ligeramente negativa)
+
+  ENERGIA + TRANQUILIDAD = Verde-amarillento (contento)
+  (arousal moderado, valencia positiva)
+
+  ESTREES + INTERES = Rojo-amarillento (tension creativa)
+  (arousal alto, valencia neutra-positiva)
+
+  ABURRIMIENTO + INQUIETUD = Gris-amarillento (impaciencia)
+  (arousal bajo, valencia ligeramente negativa, larga duracion)
+
+  SORPRESA + ALEGRIA = Amarillo-claro (asombro positivo)
+  (arousal alto, valencia alta)
+
+═══════════════════════════════════════════════════════════════
+ MAPA DE COLOR HSL (formula interna)
+═══════════════════════════════════════════════════════════════
+
+  HUE = atan2(valence, arousal) normalizado a 0-360 grados
+
+  0   = Rojo        (Estres puro)
+  45  = Naranja     (Alerta)
+  90  = Amarillo    (Entusiasmo)
+  135 = Verde-amar. (Contento)
+  180 = Verde       (Calma)
+  225 = Cian        (Serenidad)
+  270 = Azul        (Tristeza)
+  315 = Violeta     (Melancolia)
+  360 = Rojo        (vuelta al inicio)
+
+  SATURACION = magnitud * 1.5 (max 1.0)
+  Cuanto mas lejos del centro, mas intenso el color.
+  Centro (0,0) = gris neutro = sin emocion.
+
+  LUMINOSIDAD = 0.5 + magnitud * 0.3
+  Mas intensidad emocional = mas brillo.
+
+═══════════════════════════════════════════════════════════════
+ ETIQUETAS EMOCIONALES (8 estados)
+═══════════════════════════════════════════════════════════════
+
+  Basadas en la posicion en el circulo:
+
+  entusiasmo   -> alegre, emocionado, energetico
+  estres       -> ansioso, tenso, nervioso
+  tristeza     -> apatico, desanimado, melancolico
+  calma        -> sereno, tranquilo, relajado
+  alerta       -> atento, curioso, vigilante
+  sosiego      -> adormecido, pasivo, tranquilo
+  bienestar    -> contento, satisfecho, comodo
+  displacentero-> incomodo, molesto, irritado
+  neutral      -> sin emocion predominante
+
+═══════════════════════════════════════════════════════════════
+ RELACION CON HOMEOSTASIS
+═══════════════════════════════════════════════════════════════
+
+  Energia alta        + Curiosidad alta   = Arousal alto
+  Integridad baja     + Homeostasis baja  = Valencia negativa
+  Energia baja        + Quietud           = Arousal bajo
+  Homeostasis alta    + Curiosidad alta   = Valencia positiva
+
+  Las 4 pulsiones determinan el estado emocional.
+  El estado emocional NO afecta directamente las pulsiones
+  (aunque si influye en las decisiones via DQN en Fase 1).
